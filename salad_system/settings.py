@@ -74,10 +74,18 @@ WSGI_APPLICATION = 'salad_system.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
+try:
+    DB_ROOT_PASSWORD = os.environ["MYSQL_ROOT_PASSWORD"] # if your root user has a password, assign it to the "MYSQL_ROOT_PASSWORD" environment variable
+except KeyError as e:
+    DB_ROOT_PASSWORD = "" # most students' root user doesn't have a password
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'salad_system_db',
+        'USER': 'root',
+        'HOST': 'localhost',
+        'PASSWORD': DB_ROOT_PASSWORD,
     }
 }
 
