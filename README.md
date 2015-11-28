@@ -1,5 +1,13 @@
 # Salad System (Django Implementation)
 
+An example database-connected web app, using the [Django](https://www.djangoproject.com/) Python web application framework.
+
+Represents a partial implementation of [Salad System Requirements](https://github.com/gwu-business/salad-system-requirements).
+
+Based on [Salad System (Python Implementation)](https://github.com/gwu-business/salad-system-py),
+ [Salad System (Flask Implementation)](https://github.com/gwu-business/salad-system-flask),
+ and [Salad System (SQLAlchemy Implementation)](https://github.com/gwu-business/salad-system-alchemy).
+
 ## Usage
 
 ```` sh
@@ -46,3 +54,5 @@ Use an interactive console for development.
 ```` sh
 python manage.py shell
 ````
+
+## [License](LICENSE)
