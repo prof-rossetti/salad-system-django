@@ -10,6 +10,9 @@ class Location(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         db_table = "locations"
 
@@ -22,8 +25,11 @@ class Menu(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def location_id():
-        return location
+    def __str__(self):
+        return self.title
+
+    def location_id(self):
+        return self.location
 
     class Meta:
         db_table = "menus"
@@ -38,6 +44,12 @@ class MenuItem(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.title
+
+    def gf(self):
+        return self.gluten_free
+
     class Meta:
         db_table = "menu_items"
 
@@ -48,11 +60,11 @@ class MenuItemRole(models.Model):
     category = models.CharField(max_length=255)
     price_usd = models.DecimalField(max_digits=10, decimal_places=2)
 
-    def menu_id():
-        return menu
+    def menu_id(self):
+        return self.menu
 
-    def menu_item_id():
-        return menu_item
+    def menu_item_id(self):
+        return self.menu_item
 
     class Meta:
         db_table = "menu_item_roles"
