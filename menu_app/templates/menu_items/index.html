@@ -1,1 +1,13 @@
 This is a Menu.
+
+{% load i18n %}
+
+<div>
+  <ul>
+    {% for menu_item in menu_items %}
+    <li>
+      {{ menu_item.title }} {{ menu_item.category }}
+    </li>
+    {% endfor %}
+  </ul>
+</div>
