@@ -16,3 +16,6 @@
  + https://docs.djangoproject.com/en/dev/howto/custom-management-commands/
  + http://stackoverflow.com/a/12918862/670433
  + http://stackoverflow.com/a/5989819/670433
+ + https://docs.djangoproject.com/en/dev/topics/db/queries/#following-relationships-backward
+ + http://stackoverflow.com/a/16211436/670433
+ + http://stackoverflow.com/a/13439410/670433

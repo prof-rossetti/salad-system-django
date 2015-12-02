@@ -1,4 +1,4 @@
-This is a Menu.
+<h1>{{ menu.title }}</h1>
 
 {% load i18n %}
 
@@ -6,7 +6,7 @@ This is a Menu.
   <ul>
     {% for menu_item in menu_items %}
     <li>
-      {{ menu_item.title }} {{ menu_item.category }}
+      {{ menu_item.title }}
     </li>
     {% endfor %}
   </ul>

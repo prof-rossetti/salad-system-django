@@ -1,0 +1,13 @@
+{% load i18n %}
+
+<h1>Menus</h1>
+
+<div>
+  <ul>
+    {% for menu in menus %}
+    <li>
+      <a href="{% url 'menus:show' menu.id %}">{{ menu.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
