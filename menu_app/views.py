@@ -12,16 +12,16 @@ def index(request):
     return HttpResponse(template.render(context))
 
 def show(request, menu_id):
-    print "fun times"
-    print menu_id
     template = loader.get_template('menus/show.html')
-    menu = Menu.objects.first() #todo: get based on request params, and move this method into menus/<id>
-    #menu_item_roles = menu.menuitemrole_set.all()
+    menu = Menu.objects.get(id=menu_id)
+    menu_item_roles = menu.menuitemrole_set.all()
     #menu_item_role = menu_item_roles.first()
     #menu_item = menu_item_role.menu_item
     #menu_items = MenuItem.objects.select_related().all()
+    #code.interact(local=dict(globals(), **locals()))
+    menu_items = [menu_item_role.menu_item for menu_item_role in menu.menuitemrole_set.all()]
     context = RequestContext(request, {
-        'menu': menu#,
-        #'items': menu_items
+        'menu': menu,
+        'menu_items': menu_items
     })
     return HttpResponse(template.render(context))
